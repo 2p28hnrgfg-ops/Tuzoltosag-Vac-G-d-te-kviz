@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tűzoltó Kvíz</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#d62828;
+}
+
+.question{
+    margin-bottom:25px;
+}
+
+.question h3{
+    color:#333;
+}
+
+label{
+    display:block;
+    margin:8px 0;
+    padding:8px;
+    background:#f0f0f0;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#d62828;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#b51d1d;
+}
+
+#result{
+    display:none;
+    text-align:center;
+    margin-top:30px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.prize{
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🚒 Melyik Tűzoltó Hős vagy?</h1>
+<p style="text-align:center;">
+Válaszolj a 10 kérdésre és vedd át az ajándékodat!
+</p>
+
+<form id="quiz">
+
+<div class="question">
+<h3>1. Ha valaki segítségre szorul, mit teszel?</h3>
+<label><input type="radio" name="q1" value="hero"> Azonnal segítek</label>
+<label><input type="radio" name="q1" value="tech"> Megnézem milyen eszköz kell</label>
+<label><input type="radio" name="q1" value="leader"> Összefogom a csapatot</label>
+<label><input type="radio" name="q1" value="helper"> Megnyugtatom az illetőt</label>
+</div>
+
+<div class="question">
+<h3>2. Melyik tulajdonság jellemez?</h3>
+<label><input type="radio" name="q2" value="hero"> Bátor</label>
+<label><input type="radio" name="q2" value="tech"> Találékony</label>
+<label><input type="radio" name="q2" value="leader"> Vezető típus</label>
+<label><input type="radio" name="q2" value="helper"> Segítőkész</label>
+</div>
+
+<div class="question">
+<h3>3. Melyik eszközt próbálnád ki?</h3>
+<label><input type="radio" name="q3" value="hero"> Tömlő</label>
+<label><input type="radio" name="q3" value="tech"> Feszítővágó</label>
+<label><input type="radio" name="q3" value="leader"> Rádió</label>
+<label><input type="radio" name="q3" value="helper"> Elsősegélycsomag</label>
+</div>
+
+<div class="question">
+<h3>4. Mi a legfontosabb egy bevetésen?</h3>
+<label><input type="radio" name="q4" value="hero"> Gyorsaság</label>
+<label><input type="radio" name="q4" value="tech"> Jó felszerelés</label>
+<label><input type="radio" name="q4" value="leader"> Jó szervezés</label>
+<label><input type="radio" name="q4" value="helper"> Az emberek biztonsága</label>
+</div>
+
+<div class="question">
+<h3>5. Milyen feladatot választanál?</h3>
+<label><input type="radio" name="q5" value="hero"> Tűz oltása</label>
+<label><input type="radio" name="q5" value="tech"> Műszaki mentés</label>
+<label><input type="radio" name="q5" value="leader"> Irányítás</label>
+<label><input type="radio" name="q5" value="helper"> Segítségnyújtás</label>
+</div>
+
+<div class="question">
+<h3>6. Mi motivál leginkább?</h3>
+<label><input type="radio" name="q6" value="hero"> Az izgalmas helyzetek</label>
+<label><input type="radio" name="q6" value="tech"> A problémamegoldás</label>
+<label><input type="radio" name="q6" value="leader"> A csapat sikere</label>
+<label><input type="radio" name="q6" value="helper"> Mások segítése</label>
+</div>
+
+<div class="question">
+<h3>7. Melyik szó áll hozzád legközelebb?</h3>
+<label><input type="radio" name="q7" value="hero"> Hősiesség</label>
+<label><input type="radio" name="q7" value="tech"> Precizitás</label>
+<label><input type="radio" name="q7" value="leader"> Felelősség</label>
+<label><input type="radio" name="q7" value="helper"> Empátia</label>
+</div>
+
+<div class="question">
+<h3>8. Egy rendezvényen te vagy az, aki...</h3>
+<label><input type="radio" name="q8" value="hero"> Belevág minden programba</label>
+<label><input type="radio" name="q8" value="tech"> Kipróbálja a technikai dolgokat</label>
+<label><input type="radio" name="q8" value="leader"> Összehívja a barátokat</label>
+<label><input type="radio" name="q8" value="helper"> Mindenkivel kedves</label>
+</div>
+
+<div class="question">
+<h3>9. Mit vinnél magaddal?</h3>
+<label><input type="radio" name="q9" value="hero"> Védősisak</label>
+<label><input type="radio" name="q9" value="tech"> Szerszámkészlet</label>
+<label><input type="radio" name="q9" value="leader"> Térkép és rádió</label>
+<label><input type="radio" name="q9" value="helper"> Elsősegélycsomag</label>
+</div>
+
+<div class="question">
+<h3>10. Melyik szerep tetszik a legjobban?</h3>
+<label><input type="radio" name="q10" value="hero"> Beavatkozó</label>
+<label><input type="radio" name="q10" value="tech"> Műszaki szakember</label>
+<label><input type="radio" name="q10" value="leader"> Csapatvezető</label>
+<label><input type="radio" name="q10" value="helper"> Segítő</label>
+</div>
+
+<button type="button" onclick="calculateResult()">
+Eredmény megtekintése
+</button>
+
+</form>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+function calculateResult(){
+
+const scores = {
+hero:0,
+tech:0,
+leader:0,
+helper:0
+};
+
+for(let i=1;i<=10;i++){
+const answer=document.querySelector(`input[name="q${i}"]:checked`);
+
+if(!answer){
+alert("Kérlek válaszolj minden kérdésre!");
+return;
+}
+
+scores[answer.value]++;
+}
+
+let winner = Object.keys(scores).reduce((a,b)=>
+scores[a] > scores[b] ? a : b
+);
+
+const result = document.getElementById("result");
+
+if(winner==="hero"){
+result.style.background="#ffe5e5";
+result.innerHTML=`
+<h2>🚒 Beavatkozó Hős</h2>
+<p>Bátor vagy, gyorsan cselekszel és szívesen segítesz másoknak.</p>
+<div class="prize">🎁 Ajándékod: Kulcstartó + Oklevél</div>
+<h3>Mutasd meg ezt az eredményt a tűzoltóknak!</h3>
+`;
+}
+
+if(winner==="tech"){
+result.style.background="#e5f4ff";
+result.innerHTML=`
+<h2>🔧 Műszaki Mentő</h2>
+<p>Szereted a technikai kihívásokat és ügyesen oldod meg a problémákat.</p>
+<div class="prize">🎁 Ajándékod: Tetoválás + Oklevél</div>
+<h3>Mutasd meg ezt az eredményt a tűzoltóknak!</h3>
+`;
+}
+
+if(winner==="leader"){
+result.style.background="#fff3d6";
+result.innerHTML=`
+<h2>👨‍🚒 Csapatkapitány</h2>
+<p>Jól szervezel és természetes vezetőként segíted a csapatot.</p>
+<div class="prize">🎁 Ajándékod: Nyakbaakasztó + Oklevél</div>
+<h3>Mutasd meg ezt az eredményt a tűzoltóknak!</h3>
+`;
+}
+
+if(winner==="helper"){
+result.style.background="#e7ffe7";
+result.innerHTML=`
+<h2>🌟 Közösségi Segítő</h2>
+<p>Fontos számodra mások támogatása és biztonsága.</p>
+<div class="prize">🎁 Ajándékod: Toll + Oklevél</div>
+<h3>Mutasd meg ezt az eredményt a tűzoltóknak!</h3>
+`;
+}
+
+result.style.display="block";
+result.scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
